@@ -14,8 +14,12 @@
    Jersey Buoys home page
 
 */
+* {
+    box-sizing: border-box;
+}
+
 html {
-    background-color: #415B76;
+    background: #415B76;
 }
 
 body {
@@ -25,27 +29,10 @@ body {
     margin: auto;
     background-color: white;
     padding: 1em;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
+    font-family: 'Glegoo', serif;
 }
 
 /* Styles for the topnav */
-@media only screen and (min-width: 481px) {
-    #topnav {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-    }
-
-    #topnav li,
-    .dropdown {
-        -webkit-flex: 1 1 auto;
-        flex: 1 1 auto;
-    }
-}
 
 ul#topnav {
     list-style-type: none;
@@ -53,6 +40,8 @@ ul#topnav {
     padding: 0;
     overflow: hidden;
     background-color: #233656;
+    display: -webkit-flex;
+    display: flex;
 }
 
 ul#topnav li a {
@@ -83,7 +72,6 @@ ul#topnav li a:hover {
     margin: 0;
 }
 
-.navbar a:hover,
 .dropdown:hover .dropbtn {
     background-color: red;
 }
@@ -121,21 +109,91 @@ footer {
     width: 100%;
 }
 
-article {
-    -webkit-flex: 3 1 361px;
-    flex: 3 1 361px;
+#row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
 }
 
 aside {
-    align-items: flex-start;
-    -webkit-flex: 1 1 120px;
-    flex: 1 1 120px;
+    -webkit-flex: 1 1 30%;
+    flex: 1 1 30%;
+    padding: 1em;
+    background-color: #EEF4F2;
+    border-radius: 10px;
 }
 
+article {
+    -webkit-flex: 1 1 65%;
+    flex: 1 1 65%;
+    padding: 1em;
+}
+
+footer {
+    text-align: center;
+}
+
+a#navicon {
+    display: none;
+}
+
+/* Gallery code */
+.IMGrow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.IMGcolumn {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.IMGcolumn img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+    .IMGcolumn {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .IMGcolumn {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* media queries */
 @media only screen and (max-width: 480px) {
+    a#navicon {
+        display: block;
+    }
+
+    ul#topnav {
+        display: none;
+    }
+
+    a#navicon:hover+ul,
+    #topnav:hover {
+        display: block;
+    }
+
     aside {
+        -webkit-order: 98;
+        order: 98;
+    }
+
+    #gallery {
         -webkit-order: 99;
-        order: 99;
+        order: 99
     }
 
     footer {
