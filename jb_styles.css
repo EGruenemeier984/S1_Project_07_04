@@ -14,14 +14,17 @@
    Jersey Buoys home page
 
 */
+/* This affects evreything and sets the box sizing to border box. */
 * {
     box-sizing: border-box;
 }
 
+/* This affects the html tag and sets the background color */
 html {
     background: #415B76;
 }
 
+/* This affects the body tag and then sets a max and min width of the body. Also sets the font and padding for the content of the body. */
 body {
     max-width: 1100px;
     min-width: 700px;
@@ -33,7 +36,7 @@ body {
 }
 
 /* Styles for the topnav */
-
+/* This affects the unordered lists with the id of topnav and gets rid of the list styles and sets margin and padding to zero. hides overflow and sets the display to flex. */
 ul#topnav {
     list-style-type: none;
     margin: 0;
@@ -44,23 +47,28 @@ ul#topnav {
     display: flex;
 }
 
+/* This affects all unordered lists with the topnav that have anchor tags in list item tags. This sets the display to block and text color to white and aligns the text to the center and sets padding and the flex shrink/ growth rates. */
 ul#topnav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
 }
 
+/* This affects the anchor tags that are hovered on in the li tag that is in the ul tag with the id of topnav and this sets the backgorund color to a hex value. */
 ul#topnav li a:hover {
     background-color: #415B76;
 }
 
+/* This affectst the dropdown class and hides all the overflow. */
 .dropdown {
-    float: left;
     overflow: hidden;
 }
 
+/* This affects the dropbtn class in the dropdown class and sets the font-size and the color plus the margins are set to zero. */
 .dropdown .dropbtn {
     font-size: 1em;
     border: none;
@@ -72,10 +80,7 @@ ul#topnav li a:hover {
     margin: 0;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: red;
-}
-
+/* This affects the drop-content class and sets the display to none and the position to an absolute position plus established a min-width and a boxshadow. This also sets the z-index and the width to 10%. */
 .drop-content {
     display: none;
     position: absolute;
@@ -86,6 +91,7 @@ ul#topnav li a:hover {
     width: 10%;
 }
 
+/* This affects the andchor tag in the drop-content class that changes the float to none and the color to black and the padding. Also gets rid of the underline and aligns the text to the left. */
 .drop-content a {
     float: none;
     color: black;
@@ -95,20 +101,24 @@ ul#topnav li a:hover {
     text-align: left;
 }
 
+/* This affects the anchor tags that are hovered over in the drop-content class and sets the backgorund color to a hex value. */
 .drop-content a:hover {
     background-color: #ddd;
 }
 
+/* This affect the drop-content class in the dropdown class that is hovered over and sets the display to block. */
 .dropdown:hover .drop-content {
     display: block;
 }
 
 /* Other Content */
+/* This affects the header and the footer and makes the width 100%.*/
 header,
 footer {
     width: 100%;
 }
 
+/* This affects the id of row and sets the display to flex and the flex flow to a row that wraps. */
 #row {
     display: -webkit-flex;
     display: flex;
@@ -116,86 +126,111 @@ footer {
     flex-flow: row wrap;
 }
 
+/* This affects the aside element and sets the flex grow and shrink rate along with a basis size. Also adds padding, background, and border radius. */
 aside {
-    -webkit-flex: 1 1 30%;
-    flex: 1 1 30%;
+    -webkit-flex: .5 .5 30%;
+    flex: .5 .5 30%;
     padding: 1em;
     background-color: #EEF4F2;
     border-radius: 10px;
 }
 
+/* This affects the article tag and sets the flex growth and shrink values along with a basis size. */
 article {
-    -webkit-flex: 1 1 65%;
-    flex: 1 1 65%;
+    -webkit-flex: 1 1 60%;
+    flex: 1 1 60%;
     padding: 1em;
 }
 
+/* This affects the footer element and sets the text-align to center and the background to a hex value plus the padding. */
 footer {
     text-align: center;
+    background: #ddd;
+    padding: 2em;
+    border-radius: 1em;
 }
 
+/* This affects the links with the id of navicon and sets this to not be displayed on the page. */
 a#navicon {
     display: none;
 }
 
 /* Gallery code */
+/* This affects the class of IMGrow and sets the display to flex and sets it to wrap plus adds some padding to the right and left */
 .IMGrow {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 0 4px;
 }
 
+/* This affects the class of IMGcolumn and sets the flex basis size to 50% and the max-width to be 50% along with adding padding */
 .IMGcolumn {
+    -webkit-flex: 50%;
     flex: 50%;
     max-width: 50%;
     padding: 0 4px;
 }
 
+/* This affects the images in the IMGcolumn class and the margin-top is set to 8px and the it vertically aligned to the middle. */
 .IMGcolumn img {
     margin-top: 8px;
     vertical-align: middle;
 }
 
+/* This is a media querie that works when the screen has a max-width of 800px */
 @media (max-width: 800px) {
+
+    /* This affects the class of IMGcolumn and sets the flex basis size to 50% and the max-width to 50% */
     .IMGcolumn {
+        -webkit-flex: 50%;
         flex: 50%;
         max-width: 50%;
     }
 }
 
+/* This affects the screen when it is below 600px  */
 @media (max-width: 600px) {
+
+    /* This affects the class IMGcolumn and sets the flex basis size to 75% and the max-width */
     .IMGcolumn {
-        flex: 100%;
-        max-width: 100%;
+        -webkit-flex: 75%;
+        flex: 75%;
+        max-width: 75%;
     }
 }
 
 
 /* media queries */
+/* This affects the screen when its rendered on a screen below 480px */
 @media only screen and (max-width: 480px) {
+
+    /* This affects the anchor tags with the id navicon */
     a#navicon {
         display: block;
     }
 
+    /* This affects the unordered list with the id of topnav sets the display to none. */
     ul#topnav {
         display: none;
     }
 
+    /* This affects the links with the navicon id that are hovered on and the unordered lists plus the id topnav that is hovered on and sets the display to block. */
     a#navicon:hover+ul,
     #topnav:hover {
         display: block;
     }
 
+    /* This affects the aside element and sets the marrgins and aligns the items plus seets the order of the document */
     aside {
+        margin: 1em;
+        align-items: center;
         -webkit-order: 98;
         order: 98;
     }
 
-    #gallery {
-        -webkit-order: 99;
-        order: 99
-    }
-
+    /* This affects the footer element and sets the order of the document flow */
     footer {
         -webkit-order: 100;
         order: 100;
